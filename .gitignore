@@ -1,0 +1,24 @@
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Arquivos temporários do DuckDB
+*.duckdb.wal
+*.tmp
+
+# Credenciais e configurações locais (nunca subir)
+.env
+*.key
+secrets.*
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
