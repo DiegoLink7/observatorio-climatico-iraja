@@ -1,0 +1,21 @@
+Fonte: Open-Meteo Historical Weather API
+Localidade: Irajá, Rio de Janeiro (RJ)
+Coordenadas pedidas: -22.8344, -43.3272
+Ponto de grade devolvido pela API: -22.81195, -43.3125
+Período pedido: 2026-10-15 a 2026-11-13
+Coleta feita em: 2026-11-23T16:14:30-03:00
+
+[1] Datas que não puderam ser convertidas: 0
+[2] Datas duplicadas: 0
+[3] Registros: 30 (esperados: 30); de 2026-10-15 a 2026-11-13
+    Datas do período sem registro: 0
+    Datas fora do período: 0
+[4] Valores ausentes por variável:
+    temp_max_c: 0
+    temp_min_c: 0
+    precipitacao_mm: 0
+[5] Dias com temperatura máxima menor que a mínima: 0
+    Dias com precipitação negativa: 0
+    Dias com valor fora da faixa plausível (temperatura 0.0 a 45.0 °C, chuva 0.0 a 300.0 mm): 0
+
+Situação final: OK

@@ -1,0 +1,32 @@
+=== [Q0] Conferência da tabela: registros, período coberto e ausentes
+ registros  datas_distintas primeira_data ultima_data  ausentes_temp_max  ausentes_temp_min  ausentes_precipitacao
+        30               30    2026-10-15  2026-11-13                  0                  0                      0
+
+=== [P1] Qual foi a maior temperatura máxima do período e em que dia ela ocorreu?
+      data  temperatura_maxima_absoluta_c
+2026-11-05                           34.8
+
+=== [P2a] Quanto choveu no total no período?
+ precipitacao_acumulada_mm  dias_com_dado
+                     194.3             30
+
+=== [P2b] Quais foram os 5 dias mais chuvosos?
+ posicao       data  precipitacao_mm
+       1 2026-11-07             36.8
+       2 2026-10-30             22.6
+       3 2026-10-25             19.1
+       4 2026-10-17             16.1
+       5 2026-10-18             12.9
+
+=== [P3a] Quantos dias tiveram chuva (>= 1,0 mm)?
+ dias_com_chuva  dias_sem_chuva  dias_sem_dado
+             22               8              0
+
+=== [P3b] A temperatura máxima média foi diferente entre dias com e sem chuva?
+                grupo  dias  media_temp_max_c  media_temp_min_c
+com chuva (>= 1,0 mm)    22              26.6              20.2
+ sem chuva (< 1,0 mm)     8              28.8              20.2
+
+=== [R1] Resumo dos indicadores para o relatório e o painel
+ kpi1_temp_max_absoluta_c  kpi2_precipitacao_acumulada_mm  kpi3_dias_com_chuva  menor_temp_min_c  amplitude_termica_media_c
+                     34.8                           194.3                   22              17.5                        7.0

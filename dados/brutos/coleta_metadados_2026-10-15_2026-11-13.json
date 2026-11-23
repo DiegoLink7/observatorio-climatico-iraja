@@ -1,0 +1,17 @@
+{
+  "fonte": "Open-Meteo Historical Weather API",
+  "url_requisicao": "https://archive-api.open-meteo.com/v1/archive?latitude=-22.8344&longitude=-43.3272&start_date=2026-10-15&end_date=2026-11-13&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum&timezone=America%2FSao_Paulo",
+  "parametros": {
+    "latitude": -22.8344,
+    "longitude": -43.3272,
+    "start_date": "2026-10-15",
+    "end_date": "2026-11-13",
+    "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum",
+    "timezone": "America/Sao_Paulo"
+  },
+  "localidade": "Irajá, Rio de Janeiro (RJ)",
+  "coletado_em": "2026-11-23T16:14:30-03:00",
+  "status_http": 200,
+  "arquivo_json": "openmeteo_iraja_2026-10-15_2026-11-13.json",
+  "dias_recebidos": 30
+}
