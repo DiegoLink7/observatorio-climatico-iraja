@@ -123,7 +123,7 @@ if dias_chuva_dado:
         f"{numero(dados['precipitacao_mm'].sum())} mm",
         help="Soma da chuva diária dos dias com dado (KPI 2). Dia sem dado não conta como zero.",
     )
-    col2.caption(f"soma de todos os dias{nota}")
+    col2.caption(f"soma de todos os dias · 1 mm = 1 litro de água por m²{nota}")
 
     dias_com_chuva = int(dados["dia_com_chuva"].fillna(False).astype(bool).sum())
     sem_dado = int(dados["dia_com_chuva"].isna().sum())
@@ -139,6 +139,20 @@ if dias_chuva_dado:
 else:
     col2.metric("Chuva acumulada", "sem dado")
     col3.metric("Dias com chuva", "sem dado")
+
+# Ajuste feito depois da devolutiva: explicar as unidades em linguagem simples
+explicacao = (
+    "**Como entender as unidades.** A temperatura está em graus Celsius (°C), a mesma "
+    "unidade do termômetro e da previsão do tempo. A chuva está em milímetros (mm): "
+    "1 mm quer dizer 1 litro de água caindo em cada metro quadrado de chão."
+)
+if dias_chuva_dado:
+    total = dados["precipitacao_mm"].sum()
+    explicacao += (
+        f" Os {numero(total)} mm do período equivalem a uns {numero(total, 0)} litros de água "
+        "em cada metro quadrado, somando todos os dias."
+    )
+st.info(explicacao)
 
 st.divider()
 
@@ -256,8 +270,18 @@ Limites desta análise:
   um termômetro ou pluviômetro na rua marcaria.
 - **30 dias** mostram um retrato do período. Não servem para falar em tendência climática.
 - Os gráficos mostram o que aconteceu junto, não o que causou o quê.
+- O painel **não classifica risco**. Ele não tem um critério oficial que diga a partir de que
+  valor o calor ou a chuva de um dia é perigoso para a cidade.
         """
     )
+
+# Ajuste feito depois da devolutiva: indicar onde buscar aviso antes da chuva
+st.warning(
+    "**Quer saber antes?** Este painel olha para trás. Para receber avisos de chuva forte e "
+    "risco no seu celular, envie o seu CEP por SMS para **40199** ou mande um \"oi\" no WhatsApp "
+    "da Defesa Civil, **(61) 2034-4611**. Acompanhe também os boletins do Sistema Alerta Rio, "
+    "da Prefeitura."
+)
 
 # ---------------------------------------------------------------- rodapé
 st.divider()

@@ -45,8 +45,8 @@ O desenho completo está em [`docs/escopo-1/AE2-2`](docs/escopo-1/AE2-2): dicion
 | Tabela `clima_diario` e carga no DuckDB (modelo v1) | pronta | #4 |
 | Consultas SQL e indicadores | pronta | #5 |
 | Painel em Streamlit (`painel/app.py`) | pronto | #6 |
-| Devolutiva à comunidade de Irajá | material pronto em `docs/devolutiva`; conversa a registrar | #7 |
-| Revisão da documentação e relatório final | em andamento | #8 |
+| Devolutiva à comunidade de Irajá | feita em 25/11/2026; registro e ajustes em `docs/devolutiva` | #7 |
+| Revisão da documentação e relatório final | pronto: `docs/relatorio-final` | #8 |
 
 O acompanhamento fica nas [issues do repositório](https://github.com/DiegoLink7/observatorio-climatico-iraja/issues).
 
@@ -70,7 +70,7 @@ observatorio-climatico-iraja/
 │   ├── AE1/           planejamento
 │   ├── AE2/           relatório da coleta, tratamento e análise inicial
 │   └── AE2-2/         desenho da solução: dicionário, modelo, qualidade, wireframe
-├── docs/devolutiva/   resumo para a comunidade, roteiro e ficha de registro
+├── docs/devolutiva/   resumo para a comunidade, roteiro, registro e ajustes
 ├── docs/relatorio-final/  relatório final em PDF e print do painel
 ├── requirements.txt
 └── .gitignore
@@ -168,4 +168,6 @@ Valores ausentes ficam como NULL no banco. Trocar um ausente por zero inventaria
 - Os dados do Open-Meteo vêm de modelos meteorológicos e reanálise, calculados para uma grade. Eles não são medições de uma estação instalada em Irajá e podem diferir do que um termômetro ou pluviômetro no bairro registraria. Chuva muito localizada pode aparecer menor do que foi.
 - Trinta dias mostram só um retrato do período. Não servem para falar em tendência climática, e qualquer diferença entre dias com e sem chuva não prova causa e efeito.
 - Os dias mais recentes podem ainda não estar consolidados quando a coleta é feita. Se isso acontecer, a validação lista os dias com dado ausente.
+- A devolutiva foi feita com uma moradora. A opinião dela não representa o bairro inteiro.
+- O painel não faz previsão nem classifica risco. Para avisos, use o SMS 40199 (envie o seu CEP) ou o WhatsApp da Defesa Civil, (61) 2034-4611.
 - O projeto não coleta dados pessoais. Nas conversas com a comunidade, nomes só entram com autorização.
