@@ -44,9 +44,9 @@ O desenho completo está em [`docs/escopo-1/AE2-2`](docs/escopo-1/AE2-2): dicion
 | Tratamento e checagens de qualidade (Q1 a Q12) | pronta | #3 |
 | Tabela `clima_diario` e carga no DuckDB (modelo v1) | pronta | #4 |
 | Consultas SQL e indicadores | pronta | #5 |
-| Painel em Streamlit | próxima etapa, com wireframe pronto | #6 |
-| Validação com a comunidade de Irajá | a fazer | #7 |
-| Revisão da documentação e devolutiva | a fazer | #8 |
+| Painel em Streamlit (`painel/app.py`) | pronto | #6 |
+| Devolutiva à comunidade de Irajá | material pronto em `docs/devolutiva`; conversa a registrar | #7 |
+| Revisão da documentação e relatório final | em andamento | #8 |
 
 O acompanhamento fica nas [issues do repositório](https://github.com/DiegoLink7/observatorio-climatico-iraja/issues).
 
@@ -64,11 +64,14 @@ observatorio-climatico-iraja/
 ├── dados/
 │   ├── brutos/        JSON original da API + metadados da coleta
 │   └── processados/   base tratada (CSV), validação, resultados e banco DuckDB
-├── painel/            painel Streamlit (próxima etapa)
+├── painel/
+│   └── app.py         painel em Streamlit (só lê o banco)
 ├── docs/escopo-1/
 │   ├── AE1/           planejamento
 │   ├── AE2/           relatório da coleta, tratamento e análise inicial
 │   └── AE2-2/         desenho da solução: dicionário, modelo, qualidade, wireframe
+├── docs/devolutiva/   resumo para a comunidade, roteiro e ficha de registro
+├── docs/relatorio-final/  relatório final em PDF e print do painel
 ├── requirements.txt
 └── .gitignore
 ```
@@ -108,7 +111,23 @@ Você vai precisar do Python 3.10 ou mais recente e do Git.
    python src/analise.py    # roda as consultas e mostra os resultados
    ```
 
+5. Abra o painel:
+
+   ```bash
+   streamlit run painel/app.py
+   ```
+
+   O navegador abre sozinho em `http://localhost:8501`. Para fechar, volte ao terminal e aperte `Ctrl + C`.
+
+O painel só lê o banco. Ele não chama a API nem recria o banco, porque o Streamlit roda o script de novo a cada clique. Por isso a coleta e a carga (passo 4) precisam ter rodado antes. Se o painel mostrar "Banco não encontrado", rode o passo 4.
+
 A API do Open-Meteo usada aqui é gratuita e não pede chave de acesso.
+
+## O painel
+
+![Painel em Streamlit](docs/relatorio-final/painel_streamlit.png)
+
+O painel segue a ordem de leitura título, contexto, indicadores, gráficos, tabela e fonte: os 3 indicadores no topo, os gráficos de temperatura e de chuva, a tabela dia a dia, um bloco "Como ler estes números e quais são os limites" e o rodapé com fonte e unidades. Na barra lateral, o intervalo de datas filtra os gráficos e a tabela. Os indicadores valem sempre para o período inteiro.
 
 ## O banco de dados
 
