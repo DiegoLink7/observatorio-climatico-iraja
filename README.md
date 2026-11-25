@@ -30,6 +30,26 @@ Perguntas analíticas:
 
 Os parâmetros ficam todos em `src/config.py`. Para mudar a localidade ou o período, basta alterar esse arquivo.
 
+## Desenho da solução
+
+![Fluxo da solução](docs/escopo-1/AE2-2/fluxo_solucao.png)
+
+O desenho completo está em [`docs/escopo-1/AE2-2`](docs/escopo-1/AE2-2): dicionário de dados v1, modelo lógico v1, plano de qualidade com 12 checagens, plano de análise e wireframe do painel.
+
+## Estágio atual
+
+| Etapa | Situação | Issue |
+| --- | --- | --- |
+| Coleta pela API e preservação do JSON original | pronta | #1, #2 |
+| Tratamento e checagens de qualidade (Q1 a Q12) | pronta | #3 |
+| Tabela `clima_diario` e carga no DuckDB (modelo v1) | pronta | #4 |
+| Consultas SQL e indicadores | pronta | #5 |
+| Painel em Streamlit | próxima etapa, com wireframe pronto | #6 |
+| Validação com a comunidade de Irajá | a fazer | #7 |
+| Revisão da documentação e devolutiva | a fazer | #8 |
+
+O acompanhamento fica nas [issues do repositório](https://github.com/DiegoLink7/observatorio-climatico-iraja/issues).
+
 ## Estrutura
 
 ```text
@@ -47,7 +67,8 @@ observatorio-climatico-iraja/
 ├── painel/            painel Streamlit (próxima etapa)
 ├── docs/escopo-1/
 │   ├── AE1/           planejamento
-│   └── AE2/           relatório da coleta, tratamento e análise inicial
+│   ├── AE2/           relatório da coleta, tratamento e análise inicial
+│   └── AE2-2/         desenho da solução: dicionário, modelo, qualidade, wireframe
 ├── requirements.txt
 └── .gitignore
 ```
@@ -91,21 +112,23 @@ A API do Open-Meteo usada aqui é gratuita e não pede chave de acesso.
 
 ## O banco de dados
 
-O banco fica em `dados/processados/observatorio.duckdb` e tem uma tabela principal, `clima_diario`, com uma linha por dia.
+O banco fica em `dados/processados/observatorio.duckdb` e tem uma tabela principal, `clima_diario`, em que cada linha é uma localidade em uma data.
 
 | Campo | Tipo | Significado |
 | --- | --- | --- |
-| data | DATE | dia do registro (chave primária) |
-| temp_max_c | DOUBLE | temperatura máxima do dia a 2 m do solo, em °C |
-| temp_min_c | DOUBLE | temperatura mínima do dia a 2 m do solo, em °C |
-| precipitacao_mm | DOUBLE | chuva acumulada no dia, em mm |
+| cidade_id | VARCHAR | identificador da localidade (`iraja-rj`); parte da chave primária |
+| data | DATE | dia do registro; parte da chave primária |
 | localidade | VARCHAR | nome da localidade analisada |
 | latitude_grade | DOUBLE | latitude do ponto de grade usado pela API |
 | longitude_grade | DOUBLE | longitude do ponto de grade usado pela API |
+| temp_max_c | DOUBLE | temperatura máxima do dia a 2 m do solo, em °C |
+| temp_min_c | DOUBLE | temperatura mínima do dia a 2 m do solo, em °C |
+| precipitacao_mm | DOUBLE | chuva acumulada no dia, em mm |
+| dia_com_chuva | BOOLEAN | dia com 1,0 mm de chuva ou mais (calculado) |
 | fonte | VARCHAR | origem dos dados |
-| coletado_em | VARCHAR | data e hora da coleta |
+| coletado_em | TIMESTAMP | data e hora da coleta (horário de São Paulo) |
 
-Rodar o `banco.py` de novo não duplica nada. A data é a chave primária e a carga usa `INSERT OR REPLACE`, que atualiza o dia em vez de criar outra linha.
+Rodar o `banco.py` de novo não duplica nada. A chave primária é (`cidade_id`, `data`) e a carga usa `INSERT OR REPLACE`, que atualiza o dia em vez de criar outra linha. Se o banco tiver sido criado numa versão anterior, sem `cidade_id`, o script recria a tabela no modelo novo e avisa no terminal.
 
 Também dá para consultar o banco direto pelo Python:
 
@@ -117,13 +140,7 @@ print(con.sql("SELECT * FROM clima_diario ORDER BY data").df())
 
 ## Tratamento e validação
 
-O `banco.py` confere os pontos abaixo e grava o resultado em `dados/processados/relatorio_validacao.txt`:
-
-- datas que não puderam ser convertidas;
-- datas duplicadas;
-- quantidade de registros e cobertura do período, com a lista dos dias que faltam;
-- valores ausentes em cada variável;
-- temperatura máxima menor que a mínima, chuva negativa e valores fora de uma faixa plausível.
+O `banco.py` roda as 12 checagens do plano de qualidade (Q1 a Q12) e grava o resultado em `dados/processados/relatorio_validacao.txt`. Entre elas estão a estrutura e as unidades da resposta, os campos obrigatórios, datas válidas e dentro do recorte, duplicidade de `cidade_id` + `data`, cobertura dos 30 dias, ausências, mínima não maior que a máxima, chuva não negativa e faixas plausíveis para o Rio. A lista completa, com a ação para cada falha, está em [`docs/escopo-1/AE2-2`](docs/escopo-1/AE2-2).
 
 Valores ausentes ficam como NULL no banco. Trocar um ausente por zero inventaria um dado: 0 mm de chuva ou 0 °C num dia em que nada foi medido.
 

@@ -1,31 +1,31 @@
-data,temp_max_c,temp_min_c,precipitacao_mm,localidade,latitude_grade,longitude_grade,fonte,coletado_em
-2026-10-15,28.9,21.6,9.2,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-16,30.2,21.3,8.7,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-17,25.6,21.1,16.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-18,25.6,20.0,12.9,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-19,22.2,19.4,4.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-20,22.7,18.9,1.8,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-21,23.5,19.3,0.7,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-22,24.5,20.0,7.4,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-23,26.9,19.5,2.5,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-24,30.4,19.7,0.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-25,26.5,21.5,19.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-26,22.2,18.4,9.0,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-27,23.0,17.5,2.3,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-28,26.3,19.2,0.0,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-29,23.8,19.8,3.4,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-30,27.6,20.7,22.6,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-10-31,27.3,19.8,1.2,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-01,27.6,20.8,0.6,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-02,31.8,21.8,2.2,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-03,34.3,22.5,0.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-04,30.8,22.2,0.0,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-05,34.8,22.3,3.4,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-06,28.3,22.8,11.6,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-07,34.3,21.8,36.8,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-08,25.1,19.1,7.9,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-09,20.5,18.2,6.4,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-10,22.3,18.4,1.6,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-11,27.8,18.2,0.0,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-12,29.6,19.5,0.1,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
-2026-11-13,31.0,21.3,2.5,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,Open-Meteo Historical Weather API,2026-11-23T16:14:30-03:00
+cidade_id,data,localidade,latitude_grade,longitude_grade,temp_max_c,temp_min_c,precipitacao_mm,dia_com_chuva,fonte,coletado_em
+iraja-rj,2026-10-15,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,28.9,21.6,9.2,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-16,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,30.2,21.3,8.7,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-17,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,25.6,21.1,16.1,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-18,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,25.6,20.0,12.9,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-19,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,22.2,19.4,4.1,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-20,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,22.7,18.9,1.8,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-21,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,23.5,19.3,0.7,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-22,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,24.5,20.0,7.4,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-23,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,26.9,19.5,2.5,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-24,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,30.4,19.7,0.1,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-25,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,26.5,21.5,19.1,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-26,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,22.2,18.4,9.0,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-27,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,23.0,17.5,2.3,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-28,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,26.3,19.2,0.0,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-29,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,23.8,19.8,3.4,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-30,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,27.6,20.7,22.6,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-10-31,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,27.3,19.8,1.2,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-01,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,27.6,20.8,0.6,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-02,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,31.8,21.8,2.2,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-03,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,34.3,22.5,0.1,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-04,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,30.8,22.2,0.0,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-05,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,34.8,22.3,3.4,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-06,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,28.3,22.8,11.6,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-07,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,34.3,21.8,36.8,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-08,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,25.1,19.1,7.9,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-09,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,20.5,18.2,6.4,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-10,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,22.3,18.4,1.6,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-11,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,27.8,18.2,0.0,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-12,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,29.6,19.5,0.1,False,Open-Meteo Historical Weather API,2026-11-23 16:14:30
+iraja-rj,2026-11-13,"Irajá, Rio de Janeiro (RJ)",-22.81195,-43.3125,31.0,21.3,2.5,True,Open-Meteo Historical Weather API,2026-11-23 16:14:30

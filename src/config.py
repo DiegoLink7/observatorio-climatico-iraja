@@ -6,6 +6,7 @@ Para mudar a localidade, o período ou as variáveis, altere só este arquivo.
 from pathlib import Path
 
 # Localidade
+CIDADE_ID = "iraja-rj"  # identificador fixo da localidade; faz parte da chave primária
 LOCALIDADE = "Irajá, Rio de Janeiro (RJ)"
 LATITUDE = -22.8344
 LONGITUDE = -43.3272
@@ -22,6 +23,17 @@ VARIAVEIS = {
     "temperature_2m_min": "temp_min_c",
     "precipitation_sum": "precipitacao_mm",
 }
+
+# Unidade esperada para cada variável na resposta (bloco daily_units)
+UNIDADES_ESPERADAS = {
+    "temperature_2m_max": "°C",
+    "temperature_2m_min": "°C",
+    "precipitation_sum": "mm",
+}
+
+# Faixas plausíveis para o Rio de Janeiro, usadas como alerta (ver plano de qualidade)
+FAIXA_TEMPERATURA_C = (0.0, 45.0)
+FAIXA_PRECIPITACAO_MM = (0.0, 350.0)
 
 # Fonte
 URL_API = "https://archive-api.open-meteo.com/v1/archive"

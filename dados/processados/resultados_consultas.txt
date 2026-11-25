@@ -1,6 +1,6 @@
-=== [Q0] Conferência da tabela: registros, período coberto e ausentes
- registros  datas_distintas primeira_data ultima_data  ausentes_temp_max  ausentes_temp_min  ausentes_precipitacao
-        30               30    2026-10-15  2026-11-13                  0                  0                      0
+=== [Q0] Conferência da tabela: registros, período, duplicidades e ausentes
+ registros  combinacoes_cidade_data primeira_data ultima_data  ausentes_temp_max  ausentes_temp_min  ausentes_precipitacao
+        30                       30    2026-10-15  2026-11-13                  0                  0                      0
 
 === [P1] Qual foi a maior temperatura máxima do período e em que dia ela ocorreu?
       data  temperatura_maxima_absoluta_c
@@ -23,9 +23,9 @@
              22               8              0
 
 === [P3b] A temperatura máxima média foi diferente entre dias com e sem chuva?
-                grupo  dias  media_temp_max_c  media_temp_min_c
-com chuva (>= 1,0 mm)    22              26.6              20.2
- sem chuva (< 1,0 mm)     8              28.8              20.2
+                grupo  dias  dias_com_temp_max  media_temp_max_c  media_temp_min_c
+com chuva (>= 1,0 mm)    22                 22              26.6              20.2
+ sem chuva (< 1,0 mm)     8                  8              28.8              20.2
 
 === [R1] Resumo dos indicadores para o relatório e o painel
  kpi1_temp_max_absoluta_c  kpi2_precipitacao_acumulada_mm  kpi3_dias_com_chuva  menor_temp_min_c  amplitude_termica_media_c

@@ -1,17 +1,18 @@
 -- Consultas do Observatório Climático Local (Irajá, RJ)
 -- Banco: dados/processados/observatorio.duckdb | Tabela: clima_diario
--- Critério de dia com chuva: precipitação diária >= 1,0 mm
+-- Chave primária: (cidade_id, data)
+-- Critério de dia com chuva: precipitação diária >= 1,0 mm (campo dia_com_chuva)
 -- Para rodar todas: python src/analise.py
 
--- [Q0] Conferência da tabela: registros, período coberto e ausentes
+-- [Q0] Conferência da tabela: registros, período, duplicidades e ausentes
 SELECT
-    COUNT(*)                                  AS registros,
-    COUNT(DISTINCT data)                      AS datas_distintas,
-    MIN(data)                                 AS primeira_data,
-    MAX(data)                                 AS ultima_data,
-    COUNT(*) - COUNT(temp_max_c)              AS ausentes_temp_max,
-    COUNT(*) - COUNT(temp_min_c)              AS ausentes_temp_min,
-    COUNT(*) - COUNT(precipitacao_mm)         AS ausentes_precipitacao
+    COUNT(*)                                        AS registros,
+    COUNT(DISTINCT (cidade_id, data))               AS combinacoes_cidade_data,
+    MIN(data)                                       AS primeira_data,
+    MAX(data)                                       AS ultima_data,
+    COUNT(*) - COUNT(temp_max_c)                    AS ausentes_temp_max,
+    COUNT(*) - COUNT(temp_min_c)                    AS ausentes_temp_min,
+    COUNT(*) - COUNT(precipitacao_mm)               AS ausentes_precipitacao
 FROM clima_diario;
 
 -- [P1] Qual foi a maior temperatura máxima do período e em que dia ela ocorreu?
@@ -43,20 +44,21 @@ LIMIT 5;
 -- [P3a] Quantos dias tiveram chuva (>= 1,0 mm)?
 -- KPI 3: número de dias com chuva (dias)
 SELECT
-    COUNT(*) FILTER (WHERE precipitacao_mm >= 1.0) AS dias_com_chuva,
-    COUNT(*) FILTER (WHERE precipitacao_mm < 1.0)  AS dias_sem_chuva,
-    COUNT(*) FILTER (WHERE precipitacao_mm IS NULL) AS dias_sem_dado
+    COUNT(*) FILTER (WHERE dia_com_chuva)          AS dias_com_chuva,
+    COUNT(*) FILTER (WHERE NOT dia_com_chuva)      AS dias_sem_chuva,
+    COUNT(*) FILTER (WHERE dia_com_chuva IS NULL)  AS dias_sem_dado
 FROM clima_diario;
 
 -- [P3b] A temperatura máxima média foi diferente entre dias com e sem chuva?
 SELECT
-    CASE WHEN precipitacao_mm >= 1.0 THEN 'com chuva (>= 1,0 mm)'
+    CASE WHEN dia_com_chuva THEN 'com chuva (>= 1,0 mm)'
          ELSE 'sem chuva (< 1,0 mm)' END   AS grupo,
     COUNT(*)                               AS dias,
+    COUNT(temp_max_c)                      AS dias_com_temp_max,
     ROUND(AVG(temp_max_c), 1)              AS media_temp_max_c,
     ROUND(AVG(temp_min_c), 1)              AS media_temp_min_c
 FROM clima_diario
-WHERE precipitacao_mm IS NOT NULL
+WHERE dia_com_chuva IS NOT NULL
 GROUP BY grupo
 ORDER BY grupo;
 
@@ -64,7 +66,7 @@ ORDER BY grupo;
 SELECT
     MAX(temp_max_c)                                  AS kpi1_temp_max_absoluta_c,
     ROUND(SUM(precipitacao_mm), 1)                   AS kpi2_precipitacao_acumulada_mm,
-    COUNT(*) FILTER (WHERE precipitacao_mm >= 1.0)   AS kpi3_dias_com_chuva,
+    COUNT(*) FILTER (WHERE dia_com_chuva)            AS kpi3_dias_com_chuva,
     MIN(temp_min_c)                                  AS menor_temp_min_c,
     ROUND(AVG(temp_max_c - temp_min_c), 1)           AS amplitude_termica_media_c
 FROM clima_diario;
